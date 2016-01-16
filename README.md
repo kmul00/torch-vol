@@ -23,7 +23,9 @@ It is explained over [here](INSTALL.md) in detail.
 ___
 Performs `Volumetric Convolution` that supports ***padding***
 
-    nn.VolumetricConvolution(nInputPlane, nOutputPlane, kT, kW, kH, [dT], [dW], [dH], [padT], [padW], [padH])
+```lua
+nn.VolumetricConvolution(nInputPlane, nOutputPlane, kT, kW, kH, [dT], [dW], [dH], [padT], [padW], [padH])
+```
 
 This module is already *[merged](https://github.com/torch/nn/pull/481)* into the main **Torch** repository.
 
@@ -37,7 +39,9 @@ This module is already *[merged](https://github.com/torch/nn/pull/481)* into the
 ___
 Performs `Batch Normalization` over ***5D*** (batch mode) data
 
-    nn.VolumetricBatchNormalization(N [,eps] [, momentum] [,affine])
+```lua
+nn.VolumetricBatchNormalization(N [,eps] [, momentum] [,affine])
+```
 
 where `N = Number of input features`. Details regarding the other parameters could be found over 
 [here](https://github.com/torch/nn/blob/master/doc/convolution.md#nn.SpatialBatchNormalization)
@@ -50,7 +54,9 @@ where `N = Number of input features`. Details regarding the other parameters cou
 ___
 Performs `3D upsampling` on input ***videos*** containing any number of `input planes`.
 
-    nn.VolumetricUpSamplingNearest(scale_t, scale_xy)
+```lua
+nn.VolumetricUpSamplingNearest(scale_t, scale_xy)
+```
 
 where `scale_t = upsample ratio along time domain. scale_xy = upsample ratio along height, width dimension. Must be positive integers.` I have personally used this to perform ***unpooling***. Use case in ***Spatial*** domain could be found in the [dc-ign](http://arxiv.org/pdf/1503.03167v4.pdf) paper.
 
@@ -59,6 +65,30 @@ where `scale_t = upsample ratio along time domain. scale_xy = upsample ratio alo
 1. [VolumetricUpSamplingNearest.lua](https://github.com/kmul00/torch-vol/blob/master/VolumetricUpSamplingNearest.lua)
 2. [VolumetricUpSamplingNearest.c](https://github.com/kmul00/torch-vol/blob/master/generic/VolumetricUpSamplingNearest.c)
 3. [VolumetricUpSamplingNearest.cu](https://github.com/kmul00/torch-vol/blob/master/cuda/VolumetricUpSamplingNearest.cu)
+
+###VolumetricMaxUnpooling
+___
+Performs 3D `Volumetric Max Unpooling` using indices previously computed with `Volumetric Max Pooling`.
+
+```lua
+nn.VolumetricMaxUnpooling(max_module)
+```
+
+*Example usage*
+```lua
+max_module = nn.VoulmetricMaxPooling(kT, kW, kH)
+model = nn.Sequential()
+model:add(max_module)
+model:add(nn.VolumetricMaxUnpooling(max_module))
+```
+Currently this is only the `CPU` version. I will update the `CUDA` version soon.
+
+**Note:** It requires `kT==dT`, `kW==dW`, `kH==dH`.
+
+*Associated files*
+
+1. [VolumetricMaxUnpooling.lua](https://github.com/kmul00/torch-vol/blob/master/VolumetricMaxUnpooling.lua)
+2. [VolumetricMaxUnpooling.c](https://github.com/kmul00/torch-vol/blob/master/generic/VolumetricMaxUnpooling.c)
 
 ## Ending Note
 ***
