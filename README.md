@@ -85,6 +85,8 @@ Currently this is only the `CPU` version. I will update the `CUDA` version soon.
 
 **Note:** It requires `kT==dT`, `kW==dW`, `kH==dH`.
 
+This module is already *[merged](https://github.com/torch/nn/pull/569)* into the main **Torch** repository.
+
 *Associated files*
 
 1. [VolumetricMaxUnpooling.lua](https://github.com/kmul00/torch-vol/blob/master/VolumetricMaxUnpooling.lua)

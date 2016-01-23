@@ -127,6 +127,7 @@ static int nn_(VolumetricMaxUnpooling_updateOutput)(lua_State *L)
 
   /* cleanup */
   THTensor_(free)(input);
+  THTensor_(free)(indices);
   return 1;
 }
 
@@ -252,6 +253,7 @@ static int nn_(VolumetricMaxUnpooling_updateGradInput)(lua_State *L)
 
   /* cleanup */
   THTensor_(free)(gradOutput);
+  THTensor_(free)(indices);
 
   return 1;
 }
