@@ -92,6 +92,22 @@ This module is already *[merged](https://github.com/torch/nn/pull/569)* into the
 1. [VolumetricMaxUnpooling.lua](https://github.com/kmul00/torch-vol/blob/master/VolumetricMaxUnpooling.lua)
 2. [VolumetricMaxUnpooling.c](https://github.com/kmul00/torch-vol/blob/master/generic/VolumetricMaxUnpooling.c)
 
+###VolumetricMaxPooling
+___
+Performs `Volumetric Max Pooling` that supports ***padding***
+
+```lua
+nn.VolumetricMaxPooling(nInputPlane, nOutputPlane, kT, kW, kH, [dT], [dW], [dH], [padT], [padW], [padH])
+```
+
+This module is already *[merged](https://github.com/torch/nn/pull/589)* into the main **Torch** repository.
+
+*Associated files*
+
+1. [VolumetricMaxPooling.lua](https://github.com/kmul00/torch-vol/blob/master/VolumetricMaxPooling.lua)
+2. [VolumetricMaxPooling.c](https://github.com/kmul00/torch-vol/blob/master/generic/VolumetricMaxPooling.c)
+3. [VolumetricMaxPooling.cu](https://github.com/kmul00/torch-vol/blob/master/cuda/VolumetricMaxPooling.cu)
+
 ## Ending Note
 ***
 
