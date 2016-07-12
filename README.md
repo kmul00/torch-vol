@@ -1,3 +1,8 @@
+#NOTE
+
+**`Torch`** has undergone some changes in it's backend since I last updated this repository. Hence, the installation now need to be performed inside `nnx`, instead of `nn` directly.
+I have updated the installation instructions accordingly.
+
 #Torch-Vol
 
 In this repository I will be maintaining a list of modules that I had to come up with to ease my work. While starting out to work with ***Volumetric*** (**4D** or *batchmode* **5D**) data I found a lot of implementations missing, even though their ***Spatial*** versions existed. This repository is the collection of the codes that I wrote then. 
@@ -45,6 +50,8 @@ nn.VolumetricBatchNormalization(N [,eps] [, momentum] [,affine])
 
 where `N = Number of input features`. Details regarding the other parameters could be found over 
 [here](https://github.com/torch/nn/blob/master/doc/convolution.md#nn.SpatialBatchNormalization)
+
+This module is already exists in the main **Torch** repository.
 
 *Associated files*
 
