@@ -1,9 +1,9 @@
-#NOTE
+# NOTE
 
 **`Torch`** has undergone some changes in it's backend since I last updated this repository. Hence, the installation now need to be performed inside `nnx`, instead of `nn` directly.
 I have updated the installation instructions accordingly.
 
-#Torch-Vol
+# Torch-Vol
 
 In this repository I will be maintaining a list of modules that I had to come up with to ease my work. While starting out to work with ***Volumetric*** (**4D** or *batchmode* **5D**) data I found a lot of implementations missing, even though their ***Spatial*** versions existed. This repository is the collection of the codes that I wrote then. 
 
@@ -24,7 +24,7 @@ It is explained over [here](INSTALL.md) in detail.
 ## List of Modules
 ***
 
-###VolumetricConvolution
+### VolumetricConvolution
 ___
 Performs `Volumetric Convolution` that supports ***padding***
 
@@ -40,7 +40,7 @@ This module is already *[merged](https://github.com/torch/nn/pull/481)* into the
 2. [VolumetricConvolutionMM.c](https://github.com/kmul00/torch-vol/blob/master/generic/VolumetricConvolutionMM.c)
 3. [VolumetricConvolution.cu](https://github.com/kmul00/torch-vol/blob/master/cuda/VolumetricConvolution.cu)
 
-###VolumetricBatchNormalization
+### VolumetricBatchNormalization
 ___
 Performs `Batch Normalization` over ***5D*** (batch mode) data
 
@@ -57,7 +57,7 @@ This module is already exists in the main **Torch** repository.
 
 1. [VolumetricBatchNormalization.lua](https://github.com/kmul00/torch-vol/blob/master/VolumetricBatchNormalization.lua)
 
-###VolumetricUpSamplingNearest
+### VolumetricUpSamplingNearest
 ___
 Performs `3D upsampling` on input ***videos*** containing any number of `input planes`.
 
@@ -73,7 +73,7 @@ where `scale_t = upsample ratio along time domain. scale_xy = upsample ratio alo
 2. [VolumetricUpSamplingNearest.c](https://github.com/kmul00/torch-vol/blob/master/generic/VolumetricUpSamplingNearest.c)
 3. [VolumetricUpSamplingNearest.cu](https://github.com/kmul00/torch-vol/blob/master/cuda/VolumetricUpSamplingNearest.cu)
 
-###VolumetricMaxUnpooling
+### VolumetricMaxUnpooling
 ___
 Performs 3D `Volumetric Max Unpooling` using indices previously computed with `Volumetric Max Pooling`.
 
@@ -99,7 +99,7 @@ This module is already *[merged](https://github.com/torch/nn/pull/569)* into the
 1. [VolumetricMaxUnpooling.lua](https://github.com/kmul00/torch-vol/blob/master/VolumetricMaxUnpooling.lua)
 2. [VolumetricMaxUnpooling.c](https://github.com/kmul00/torch-vol/blob/master/generic/VolumetricMaxUnpooling.c)
 
-###VolumetricMaxPooling
+### VolumetricMaxPooling
 ___
 Performs `Volumetric Max Pooling` that supports ***padding***
 
